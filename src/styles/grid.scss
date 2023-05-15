@@ -1,0 +1,77 @@
+@use "sass:math";
+/* GRID SYSTEM */
+$cols: 12;
+$gap: 24px;
+
+.container-grid {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: math.div($gap, 2);
+  padding-right: math.div($gap, 2);
+}
+
+.gs\:grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: math.div($gap, -4);
+  margin-right: math.div($gap, -4);
+}
+
+[class*="col-"],
+.col {
+  width: 100%;
+  max-width: 100%;
+  padding-left: math.div($gap, 2);
+  padding-right: math.div($gap, 2);
+  // margin-top: 10px;
+}
+
+@mixin grid-system($mq) {
+  .#{ $mq } {
+    flex: 1 0 0;
+  }
+
+  @for $col from 1 through $cols {
+    .#{ $mq }-#{ $col } {
+      flex: 0 0 math.div(100%, $cols) * $col;
+      max-width: math.div(100%, $cols) * $col;
+    }
+  }
+}
+
+@mixin display($col) {
+  .#{ $col }none {
+    display: none;
+  }
+  .#{ $col }block {
+    display: block;
+  }
+}
+
+@include grid-system(col);
+@include display(xs\:);
+
+@media screen and (min-width: 576px) {
+  @include grid-system(xs\:col);
+  @include display(xs\:);
+}
+
+@media screen and (min-width: 768px) {
+  @include grid-system(md\:col);
+  @include display(md\:);
+}
+
+@media screen and (min-width: 992px) {
+  @include grid-system(lg\:col);
+  @include display(lg\:);
+}
+
+@media screen and (min-width: 1200px) {
+  @include grid-system(xl\:col);
+  @include display(xl\:);
+}
+
+@media screen and (min-width: 1400px) {
+  @include grid-system(xxl\:col);
+  @include display(xxl\:);
+}
