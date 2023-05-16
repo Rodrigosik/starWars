@@ -1,0 +1,16 @@
+<app-nav-bar (search)="search = $event"></app-nav-bar>
+<div class="page">
+  <div class="card">
+    <div class="image-list container-grid">
+      <div class="image-list__container gs:grid">
+        <div
+          class="image-list__item xs:col-8 md:col-4 xl:col-3 xxl:col-2"
+          *ngFor="let item of imagesList | searchPipe : search"
+        >
+          <img [src]="item.image" class="image-list__image" />
+          <span class="image-list__title">{{ item.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

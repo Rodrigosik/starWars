@@ -1,0 +1,37 @@
+::ng-deep :root {
+  --navbar-bg: #ffffff;
+  --navbar-text: #171514;
+  --nav-heiht: 70px;
+}
+
+::ng-deep body.dark {
+  --navbar-bg: #0d1117;
+  --navbar-text: #e8e8e8;
+}
+
+.nav-bar {
+  background-color: var(--navbar-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--nav-heiht);
+  padding: 5px 20px;
+  overflow: hidden;
+  width: 100%;
+
+  border-width: max(1px, 0.0625rem);
+  border-color: var(--border-color);
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  transition: all 0.2s ease;
+}
+
+.nav-bar__title {
+  font-weight: 500;
+}
+
+::ng-deep .input {
+  width: 240px;
+}
