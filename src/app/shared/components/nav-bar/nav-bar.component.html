@@ -1,0 +1,15 @@
+<nav class="nav-bar">
+  <h1 class="nav-bar__title">StarWars</h1>
+  <div class="nav-bar__search">
+    <div appInputContainer>
+      <label>Search:</label>
+      <input
+        #SearchInput
+        type="text"
+        placeholder="Search by name"
+        (input)="search.emit(SearchInput.value)"
+      />
+      <i class="bx bx-search"></i>
+    </div>
+  </div>
+</nav>

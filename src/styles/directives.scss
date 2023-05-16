@@ -1,0 +1,186 @@
+:root {
+  --component-text: #747474;
+  --component-border-color: #747474;
+  --component-border: max(1px, 0.0625rem);
+}
+
+$component-text: white;
+$component-border: var(--component-border);
+$component-border-color: white;
+
+:root {
+  --input-placeholder: #7da3b3;
+}
+
+$input-placeholder: var(--input-placeholder);
+
+[appInputContainer]:has(.ng-invalid.ng-touched) > *,
+[vcSelectContainer]:has(.ng-invalid.ng-touched) > * {
+  --component-border-color: #fe6363;
+  --component-text: #fe6363;
+}
+
+[appInputContainer]:has(.ng-valid.ng-dirty) > *,
+[vcSelectContainer]:has(.ng-valid.ng-dirty) > * {
+  --component-border-color: #03af0b;
+  --component-text: #03af0b;
+}
+
+[appInputContainer]:has([disabled]),
+[vcSelectContainer]:has([disabled]) {
+  opacity: 0.3;
+}
+
+// #######################################################################
+// Input Component
+// #######################################################################
+
+.input {
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.input__left {
+  border: $component-border solid $component-border-color;
+  width: 10px;
+  border-right: 0px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.input__label {
+  color: $component-text;
+  margin-top: 6px;
+  border-bottom: $component-border solid $component-border-color;
+  font-weight: 600;
+  padding: 0px 10px;
+  transition: margin-top 0.2s ease;
+  white-space: nowrap;
+}
+
+.input__rigth {
+  border: $component-border solid $component-border-color;
+  border-left: none;
+  width: 100%;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.input__input {
+  border-radius: 5px;
+  position: absolute;
+  background: none;
+  border: none;
+  z-index: 1;
+  height: 40px;
+  width: 100%;
+  text-indent: 15px;
+  font-weight: 500;
+  font-size: 15px;
+  border-top: $component-border solid $component-border-color;
+  padding-right: 50px;
+  color: $component-text;
+}
+
+.input__input:focus {
+  outline: none;
+}
+
+.input__input:focus-within ~ .input__label,
+.input__input:not(:placeholder-shown) ~ .input__label {
+  margin-top: -13px;
+}
+
+.input__input:focus-within,
+.input__input:not(:placeholder-shown) {
+  border-top: 0px;
+}
+
+.input__input:focus-within::placeholder,
+.input__input:not(:placeholder-shown)::placeholder {
+  opacity: 1;
+}
+
+.input__input::placeholder {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  color: $input-placeholder;
+}
+
+.input__icon {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  color: $component-text;
+  font-size: 25px;
+  z-index: 10;
+}
+
+// #######################################################################
+// Accordion Component
+// #######################################################################
+
+:root {
+  --accordion-border-color: #d7d7d7;
+}
+
+$accordion-border-color: var(--accordion-border-color);
+
+.accordion:has(.accordion__toggle:checked) {
+  --accordion-rows: 1fr;
+}
+
+.accordion:has(.accordion__toggle:checked) .accordion__icon {
+  transform: rotate(90deg);
+}
+
+.accordion:has(.accordion__toggle:checked) .accordion__container {
+  padding: 10px 20px;
+}
+
+.accordion {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: var(--table-bg);
+  color: var(--table-text);
+}
+
+.accordion__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid $accordion-border-color;
+}
+
+.accordion__toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  opacity: 0;
+}
+
+.accordion__icon {
+  padding-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.accordion__body {
+  display: grid;
+  grid-template-rows: var(--accordion-rows, 0fr);
+  transition: 0.3s grid-template-rows ease-out;
+}
+
+.accordion__container {
+  overflow: hidden;
+  padding: 0px 20px;
+  transition: padding 0.3s ease-out;
+}

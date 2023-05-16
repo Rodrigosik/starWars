@@ -1,0 +1,68 @@
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: white;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title {
+  color: black;
+}
+
+::ng-deep .mat-divider {
+  border-top-color: rgb(0 0 0 / 12%);
+}
+
+.information {
+  color: black;
+}
+
+.information__image-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.information__image {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.information__item {
+  display: block;
+}
+
+.information__description-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  padding: 20px;
+  background-color: var(--color-prymary);
+  color: white;
+  border-radius: 6px;
+}
+
+.information__affiliation-container {
+  list-style: none;
+}
+
+.information__affiliation {
+  padding: 5px 0px;
+  padding-left: 20px;
+}
+.information__affiliation:nth-child(even) {
+  background-color: #cdc3f9;
+}
+
+::ng-deep .accordion:has(.accordion__toggle:checked),
+::ng-deep .accordion__container {
+  padding: 0px 0px !important;
+}
+
+.information__footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  word-wrap: break-word;
+  margin-top: 20px;
+}

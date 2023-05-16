@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* ===== Colors ===== */
+  --color-page: #e2e2eb;
+  --color-text: #747474;
+  --border-color: #bfc2c5;
+  --card-bg: white;
+  --color-prymary: #504190;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-page);
+  transition: all 0.5s ease;
+}
+
+.page {
+  width: 100%;
+  padding: 40px;
+  overflow: auto;
+  min-height: calc(100vh - 70px);
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 6px;
+  overflow: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-width: max(1px, 0.0625rem);
+  border-color: var(--border-color);
+  border-style: solid;
+}

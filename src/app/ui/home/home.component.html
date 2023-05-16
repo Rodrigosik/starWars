@@ -1,0 +1,26 @@
+<app-nav-bar (search)="search = $event"></app-nav-bar>
+<div class="page" *ngIf="isLoad">
+  <div class="card">
+    <div class="image-list container-grid">
+      <div class="image-list__container gs:grid">
+        <div
+          class="image-list__item xs:col-8 md:col-4 xl:col-3 xxl:col-2"
+          *ngFor="let item of imagesList | searchPipe : search"
+          (click)="openInformation(item)"
+        >
+          <img [src]="item.image" class="image-list__image" />
+          <span class="image-list__title">{{ item.name }}</span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="not-found"
+      *ngIf="
+        !(imagesList | searchPipe : search).length || imagesList.length === 0
+      "
+    >
+      <i class="bx bx-error-circle not-found__icon"></i>
+      <p class="not-found__text">Not Found</p>
+    </div>
+  </div>
+</div>

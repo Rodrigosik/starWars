@@ -1,0 +1,23 @@
+export class starWarsApiModel {
+  id: number = 0;
+  name: string = '';
+  height: number = 0;
+  mass: number = 0;
+  gender: string = '';
+  homeworld: string = '';
+  wiki: string = '';
+  image: string = '';
+  born: number = 0;
+  bornLocation: string = '';
+  died: number = 0;
+  diedLocation: string = '';
+  species: string = '';
+  hairColor: string = '';
+  eyeColor: string = '';
+  skinColor: string = '';
+  cybernetics: string = '';
+  affiliations: string[] = [];
+  masters: string[] = [];
+  apprentices: string[] = [];
+  formerAffiliations: any[] = [];
+}
