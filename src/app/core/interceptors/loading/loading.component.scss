@@ -30,7 +30,9 @@ $Loader-timing: ease-in-out;
     animation-duration: 1.8s;
     animation-iteration-count: infinite;
     animation-timing-function: $Loader-timing;
-    filter: drop-shadow(0 0 $Loader-offset/2.25 rgba($Loader-color, 0.75));
+    filter: drop-shadow(
+      0 0 calc($Loader-offset/2.25) rgba($Loader-color, 0.75)
+    );
   }
   &:before {
     width: 100%;
