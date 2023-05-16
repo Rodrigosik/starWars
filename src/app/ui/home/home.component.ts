@@ -26,9 +26,6 @@ export class HomeComponent implements OnInit {
   }
 
   openInformation(data: starWarsApiModel): void {
-    this.informationService
-      .open(data)
-      .afterClosed()
-      .subscribe(() => {});
+    this.informationService.open(data);
   }
 }
