@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NavBarComponent } from './components';
-import { InputContainerDirective } from './directives';
+import { AccordionDirective, InputContainerDirective } from './directives';
 import { MaterialModule } from './modules';
 import { SearchPipe } from './pipes/search.pipe';
 
@@ -9,7 +9,7 @@ const MODULES = [MaterialModule];
 
 const COMPONENTS = [NavBarComponent];
 
-const DIRECTIVES = [InputContainerDirective];
+const DIRECTIVES = [InputContainerDirective, AccordionDirective];
 
 const PIPES = [SearchPipe];
 

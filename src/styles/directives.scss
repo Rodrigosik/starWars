@@ -8,9 +8,9 @@ body.dark {
   --component-text: #e8e8e8;
 }
 
-$component-text: var(--component-text);
+$component-text: white;
 $component-border: var(--component-border);
-$component-border-color: var(--component-border-color);
+$component-border-color: white;
 
 :root {
   --input-placeholder: #7da3b3;
@@ -120,4 +120,75 @@ $input-placeholder: var(--input-placeholder);
   color: $component-text;
   font-size: 25px;
   z-index: 10;
+}
+
+// #######################################################################
+// Accordion Component
+// #######################################################################
+
+:root {
+  --accordion-border-color: #d7d7d7;
+}
+
+body.dark {
+  --accordion-border-color: #2c2b2b;
+}
+
+$accordion-border-color: var(--accordion-border-color);
+
+.accordion:has(.accordion__toggle:checked) {
+  --accordion-rows: 1fr;
+}
+
+.accordion:has(.accordion__toggle:checked) .accordion__icon {
+  transform: rotate(90deg);
+}
+
+.accordion:has(.accordion__toggle:checked) .accordion__container {
+  padding: 10px 20px;
+}
+
+.accordion {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: var(--table-bg);
+  color: var(--table-text);
+}
+
+.accordion__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid $accordion-border-color;
+}
+
+.accordion__toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  opacity: 0;
+}
+
+.accordion__icon {
+  padding-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.accordion__body {
+  display: grid;
+  grid-template-rows: var(--accordion-rows, 0fr);
+  transition: 0.3s grid-template-rows ease-out;
+}
+
+.accordion__container {
+  overflow: hidden;
+  padding: 0px 20px;
+  transition: padding 0.3s ease-out;
 }

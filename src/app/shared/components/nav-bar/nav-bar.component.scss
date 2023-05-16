@@ -1,5 +1,5 @@
 ::ng-deep :root {
-  --navbar-bg: #ffffff;
+  --navbar-bg: var(--color-prymary);
   --navbar-text: #171514;
   --nav-heiht: 70px;
 }
@@ -30,6 +30,7 @@
 
 .nav-bar__title {
   font-weight: 500;
+  color: #e8e8e8;
 }
 
 ::ng-deep .input {

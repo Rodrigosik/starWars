@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>
+  {{ data.name | titlecase }}
+</h1>
+<mat-divider> </mat-divider>
+
+<mat-dialog-content>
+  <div class="information">
+    <div class="information__image-container">
+      <img [src]="data.image" class="information__image" />
+    </div>
+
+    <div class="information__description-container">
+      <span class="information__item"
+        >date of birth: <strong>{{ data.born }}</strong></span
+      >
+      <span class="information__item"
+        >Gender: <strong>{{ data.gender }}</strong></span
+      >
+      <span class="information__item"
+        >Height: <strong>{{ data.height }}</strong></span
+      >
+      <span class="information__item"
+        >Mass: <strong>{{ data.mass }}</strong></span
+      >
+      <span class="information__item"
+        >Species: <strong>{{ data.species }}</strong></span
+      >
+      <span class="information__item"
+        >Homeworld: <strong>{{ data.homeworld }}</strong></span
+      >
+    </div>
+
+    <article appAccordion style="margin-top: 20px">
+      <header><strong>Affiliations</strong></header>
+      <section>
+        <ul class="information__affiliation-container">
+          <li
+            *ngFor="let item of data.affiliations"
+            class="information__affiliation"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </section>
+    </article>
+
+    <div class="information__footer">
+      <strong>More information</strong>
+      <a [href]="data.wiki" target="_blank">{{ data.wiki }}</a>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center" class="pb-4">
+  <button mat-raised-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
