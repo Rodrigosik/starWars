@@ -11,7 +11,7 @@ export class InformationService {
     return this.dialog.open<InformationComponent>(InformationComponent, {
       disableClose: true,
       data: data,
-      width: '350px',
+      width: '400px',
     });
   }
 }

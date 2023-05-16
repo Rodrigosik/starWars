@@ -2,11 +2,11 @@
   <h1 class="nav-bar__title">StarWars</h1>
   <div class="nav-bar__search">
     <div appInputContainer>
-      <label>Busqueda:</label>
+      <label>Search:</label>
       <input
         #SearchInput
         type="text"
-        placeholder="Busqueda por nombre"
+        placeholder="Search by name"
         (input)="search.emit(SearchInput.value)"
       />
       <i class="bx bx-search"></i>

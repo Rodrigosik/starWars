@@ -4,11 +4,6 @@
   --nav-heiht: 70px;
 }
 
-::ng-deep body.dark {
-  --navbar-bg: #0d1117;
-  --navbar-text: #e8e8e8;
-}
-
 .nav-bar {
   background-color: var(--navbar-bg);
   display: flex;
@@ -35,4 +30,11 @@
 
 ::ng-deep .input {
   width: 240px;
+}
+
+@media (max-width: 400px) {
+  .nav-bar {
+    height: 100px;
+    flex-direction: column;
+  }
 }

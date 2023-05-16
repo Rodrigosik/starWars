@@ -10,7 +10,5 @@ export class InformationComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public readonly data: starWarsApiModel
-  ) {
-    console.log(this.data);
-  }
+  ) {}
 }

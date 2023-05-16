@@ -11,6 +11,7 @@ import { InformationService } from './modals/information/information.service';
 export class HomeComponent implements OnInit {
   imagesList: starWarsApiModel[] = [];
   search: string = '';
+  isLoad: boolean = false;
 
   constructor(
     private readonly starwarsService: StarwarsService,
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.starwarsService.getDataStarWars().subscribe((response) => {
       this.imagesList = response;
-      console.log(response);
+      this.isLoad = true;
     });
   }
 

@@ -4,10 +4,6 @@
   --component-border: max(1px, 0.0625rem);
 }
 
-body.dark {
-  --component-text: #e8e8e8;
-}
-
 $component-text: white;
 $component-border: var(--component-border);
 $component-border-color: white;
@@ -128,10 +124,6 @@ $input-placeholder: var(--input-placeholder);
 
 :root {
   --accordion-border-color: #d7d7d7;
-}
-
-body.dark {
-  --accordion-border-color: #2c2b2b;
 }
 
 $accordion-border-color: var(--accordion-border-color);
