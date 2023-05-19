@@ -28,15 +28,3 @@ body {
   overflow: auto;
   min-height: calc(100vh - 70px);
 }
-
-.card {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 6px;
-  overflow: auto;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  border-width: max(1px, 0.0625rem);
-  border-color: var(--border-color);
-  border-style: solid;
-}

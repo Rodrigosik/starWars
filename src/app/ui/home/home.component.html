@@ -1,16 +1,22 @@
 <app-nav-bar (search)="search = $event"></app-nav-bar>
 <div class="page" *ngIf="isLoad">
-  <div class="card">
-    <div class="image-list container-grid">
-      <div class="image-list__container gs:grid">
-        <div
-          class="image-list__item xs:col-8 md:col-4 xl:col-3 xxl:col-2"
-          *ngFor="let item of imagesList | searchPipe : search"
-          (click)="openInformation(item)"
-        >
-          <img [src]="item.image" class="image-list__image" />
-          <span class="image-list__title">{{ item.name }}</span>
-        </div>
+  <header class="header">
+    <h1 class="header__title">Star Wars Gallery</h1>
+    <span class="header__description"
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate
+      porro blanditiis voluptate tenetur modi eaque, qui exercitationem eius
+      fuga!</span
+    >
+  </header>
+  <div class="image-list-container">
+    <div class="image-list">
+      <div
+        class="image-list__item"
+        *ngFor="let item of imagesList | searchPipe : search"
+        (click)="openInformation(item)"
+        [style]="'background-image: url(' + item.image + ')'"
+      >
+        <span class="image-list__title">{{ item.name }}</span>
       </div>
     </div>
     <div
